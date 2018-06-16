@@ -223,3 +223,132 @@ document.getElementById("date").innerHTML=shows;
 
 
 </body></html></plaintext></body></html>
+
+		
+		
+		<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<title>新用户注册</title>
+<link href="/img/t1.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body>
+<div class="top">
+<div class="d1">
+<div class="d11">
+<a href="/" class="d7">会分享有收获</a></div>
+<div class="d12">
+<a href="/">Lanzou.com</a>
+<a href="account.php?action=login">登录</a>
+<a href="account.php?action=register">注册</a>
+</div>
+</div>
+</div>
+<div class="pc"></div>
+<div class="p9">
+<style>
+.reg2{margin-left: 8px;margin-bottom: 8px;color: #888;}
+.reg3{margin-left: 8px;}
+.reg5{display: none;}
+.reg6{margin-left: 8px;}
+.reg7{padding-bottom: 38px;line-height: 1.5em;color: #888;padding-top: 16px;font-size: 12px;}
+.reg8{text-align: center;height: 38px;background-color: #FFA300;color: #FFFFFF;font-size: 16px;font-family: \9ED1\4F53;border-radius: 4px;line-height: 38px;margin-top: 50px;width: auto;margin-right: 8px;}
+.reg9{margin: 8px;}
+.reg10{display: none;}
+.p8{border-top: 0;border-left: 0;border-right: 0;box-shadow: none;border-radius: 0;border-bottom: 1px solid #eee;}
+.p8:focus{border: none;box-shadow: none;outline: none;background: #fff;border-bottom: 1px solid #eee;}
+#regb{display: none;}
+.fixd{display:none}
+.fixds{display:block}
+</style>
+
+<form name="user_form" onsubmit="return chkform(this);" action="account.php" method="post">
+<input type="hidden" name="action" value="register">
+<input type="hidden" name="task" value="register">
+<input type="hidden" name="invite_uid" value="0">
+<input type="hidden" name="formhash" value="2d15f781">
+<div id="rega">
+<div class="reg1">
+<div class="reg2">手机号</div>
+<div class="reg3">
+<div class="reg10">+86</div>
+<input class="p8" tabindex="4" type="text" name="email" value="" maxlength="50" placeholder="">
+<div class="reg8" onclick="next();">下一步</div>
+</div>
+</div>
+</div>
+
+<div id="regb">
+<div class="reg4">
+<div class="reg5">https://pan.lanzou.com/u/</div>
+<div class="reg6"><input class="p8" tabindex="1" type="text" name="username" value="" maxlength="20" placeholder="用户名">
+<div class="reg7">设置您的登陆用户名，2位数长度以上。</div>
+</div>
+</div>
+
+<div class="reg4">
+<div class="reg5">输入验证码</div>
+<div class="reg6"><input class="p8" type="text" name="verycode" value="" size="8" maxlength="6">&nbsp;<img src="imgcode?verycode_type=2" style="cursor:pointer;width: 90px;" alt="刷新" id="imgcode" border="0" onclick="chg_imgcode();">
+<div class="reg7">输入图形中的数字或者字符</div>
+</div>
+</div>
+
+<div class="reg9"><input type="submit" id="s3" class="btn" value="开始注册"></div>
+</div>
+</form>
+</div>
+<script language="javascript">
+getId('imgcode').src = 'imgcode?verycode_type=2';
+  function chg_imgcode(){
+  	getId('imgcode').src = 'imgcode?verycode_type=2&t='+Math.random();
+  }
+function next(){
+	getId('rega').style.display = "none";
+	getId('regb').style.display = "block";
+	getId('z2').addClass = "zcs";
+	$('#z2').addClass('zcs');
+}
+//document.user_form.username.focus();
+function chkform(o){
+
+	if(o.username.value.strtrim().length <2){
+		//$('#e_name').addClass('reg');
+		o.username.focus();
+		return false;
+	}
+	if(o.email.value.strtrim().length <2){
+		//$('#e_ezf').addClass('reg');
+		getId('regb').style.display = "none";
+		getId('rega').style.display = "block";
+		o.email.focus();
+		return false;
+	}
+	getId('s3').disabled = true;
+	getId('s3').value = "正在注册中...";
+	
+}
+function regok(){
+	//$('.fixd').style.display = "none";
+	//$('.fixds').style.display = "block";
+	getId('fixd').style.display = "none";
+	getId('fixds').style.display = "block";
+}
+</script>
+
+<script type="text/javascript" src="/includes/js/common.js"></script>
+<script type="text/javascript" src="/includes/js/jquery.js"></script>
+<div class="foot_info">
+<script language="javascript">
+function getdates()
+{
+var d=new Date();
+var year=d.getFullYear();
+var shows="&copy; " + year + " Lanzou";
+document.getElementById("date").innerHTML=shows;
+}
+</script>
+<div id="date">© 2018 Lanzou</div></div>
+
+
+</body></html></plaintext></body></html>
